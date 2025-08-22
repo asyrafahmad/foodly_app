@@ -4,6 +4,10 @@ Create A new (foodly_app) Flutter project.
 
 1. https://pub.dev/packages/flutter_screenutil
 
+--------------------  Steps  --------------------
+
+1. Copy pubspec.yaml from the downloaded resources
+
 
 --------------------  Command  --------------------
 

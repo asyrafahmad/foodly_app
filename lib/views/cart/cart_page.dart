@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:foodly_app/common/custom_container.dart';
+import 'package:foodly_app/constants/constants.dart';
 
 class CartPage extends StatelessWidget {
   const CartPage({super.key});
@@ -6,11 +9,21 @@ class CartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: kPrimary,
       appBar: AppBar(
-        title: Text('Cart'),
+        title: PreferredSize(
+          preferredSize: Size.fromHeight(130.h), 
+          child: Container(
+            height: 130.h
+          )
+        ),
       ),
-      body: Center(
-        child: Text('Cart Page'),
+      body: SafeArea(
+        child: CustomContainer(
+          containerContent: Container(
+
+          )
+        )
       ),
     );
   }
