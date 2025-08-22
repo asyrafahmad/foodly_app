@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors_in_immutables
+// ignore_for_file: prefer_const_constructors_in_immutables, must_be_immutable
 
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
