@@ -3,6 +3,7 @@ Create A new (foodly_app) Flutter project.
 
 
 1. https://pub.dev/packages/flutter_screenutil
+2. https://emojipedia.org/
 
 --------------------  Steps  --------------------
 

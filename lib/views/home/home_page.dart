@@ -21,8 +21,10 @@ class HomePage extends StatelessWidget {
       body: SafeArea(
         child: CustomContainer(
           containerContent: Container(
-            
-          ))),
+
+          )
+        )
+      ),
     );
   }
 }
