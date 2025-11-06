@@ -1,73 +1,81 @@
+// Core Flutter Material Design package
 import 'package:flutter/material.dart';
+// Package for responsive UI and screen size adaptation
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+// App-wide constants (colors, theme values, etc.)
 import 'package:foodly_app/constants/constants.dart';
+// Main navigation structure of the app
 import 'package:foodly_app/views/entrypoint.dart';
+// GetX state management package
 import 'package:get/get.dart';
 
-Widget defaultHome = MainScreen();
+// Define the default home screen of the app
+Widget defaultHome = MainScreen(); // The main screen with bottom navigation
 
+/// Entry point of the application
 void main() {
   runApp(const MyApp());
 }
 
+/// Root widget of the Foodly application
+/// This widget sets up the basic app configuration including:
+/// - Screen size adaptation
+/// - Theme configuration
+/// - Navigation setup with GetX
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
+      // Set the design size for responsive scaling
+      // This matches the design specifications (e.g., from Figma)
       designSize: const Size(375, 825),
-      minTextAdapt: true,
-      splitScreenMode: true,
-      // Use builder only if you need to use library outside ScreenUtilInit context
+      minTextAdapt: true,  // Automatically adapt text size
+      splitScreenMode: true, // Support split screen mode
+      // Builder provides the configured context to the app
       builder: (context, child) {
         return GetMaterialApp(
-          debugShowCheckedModeBanner: false,
+          debugShowCheckedModeBanner: false, // Remove debug banner
           title: 'Foodly App',
-          // You can use the library anywhere in the app even in theme
+          // App-wide theme configuration
           theme: ThemeData(
-            scaffoldBackgroundColor: kOffWhite,
+            scaffoldBackgroundColor: kOffWhite, // Background color for all screens
             iconTheme: const IconThemeData(
-              color: kDark,
+              color: kDark, // Default icon color
             ),
-            primarySwatch: Colors.grey
+            primarySwatch: Colors.grey // Primary color palette
           ),
-          home: defaultHome,
+          home: defaultHome, // Set the initial screen (MainScreen)
         );
       },
     );
   }
 }
 
+/// Default Flutter counter page (can be removed if not needed)
+/// This is the template page that comes with new Flutter projects
+/// Note: This page is currently not being used as we're using MainScreen as our home page
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
+  // The title of the page, passed in from the parent widget
   final String title;
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
+/// State class for the MyHomePage widget
+/// Note: This is template code and can be removed if not needed
 class _MyHomePageState extends State<MyHomePage> {
+  // Counter variable to demonstrate state management
   int _counter = 0;
 
+  // Method to increment the counter and trigger a UI update
   void _incrementCounter() {
     setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
+      // Update the counter value and rebuild the UI
       _counter++;
     });
   }
