@@ -1,9 +1,17 @@
+// Core Flutter Material Design package
 import 'package:flutter/material.dart';
+// Package for responsive UI and screen adaptation
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+// Custom app-wide text styles
 import 'package:foodly_app/common/app_style.dart';
+import 'package:foodly_app/common/background_container.dart';
+// Reusable text widget for consistent text styling
 import 'package:foodly_app/common/reusable_text.dart';
+// App-wide constants like colors and dimensions
 import 'package:foodly_app/constants/constants.dart';
+// UI data including category information
 import 'package:foodly_app/constants/uidata.dart';
+
 
 /// Screen that shows all categories.
 /// - Stateless because it does not hold mutable state itself (state comes from controllers or parent widgets).
@@ -23,31 +31,48 @@ class AllCategories extends StatelessWidget {
         backgroundColor: kOffWhite, // White background for the app bar.
         // Title displayed in the app bar.
         title: ReusableText(
-          text: "All Categories", 
+          text: "Categories", 
           style: appStyle(12, kGray, FontWeight.w600)),
       ),
 
-      body: Container(
-        padding: EdgeInsets.only(left: 12.w, top:10.h),
-        height: height,
-        child: ListView(
-        scrollDirection: Axis.horizontal,
-        children: List.generate(categories.length, (i) {
-          var category = categories[i];
-
-          return ListTile(
-            leading: CircleAvatar(
-              radius: 30.r,
-              backgroundColor: kGrayLight,
-              child: Image.network(category['imageUrl'], fit: BoxFit.contain),
-            ),
-            title: ReusableText(text: category['title'],
-            style: appStyle(12, kGray, FontWeight.normal)),
-            trailing: Icon(Icons.arrow_forward_ios_rounded, size: 15.r, color: kGray),
-          );
-
-        }),
-      ),
+      // Main content area containing the list of categories
+      body: BackgroundContainer(
+        color: Colors.white,
+        child: Container(
+          // Add padding for better spacing and visual appeal
+          padding: EdgeInsets.only(left: 12.w, top:10.h),
+          height: height,  // Full screen height for the container
+          // Horizontal scrolling list of categories
+          child: ListView(
+          scrollDirection: Axis.horizontal,
+          // Dynamically generate list items based on categories data
+          children: List.generate(categories.length, (i) {
+            // Get the current category data
+            var category = categories[i];
+        
+            // Each category is displayed as a ListTile
+            return ListTile(
+              // Leading circular avatar with category image
+              leading: CircleAvatar(
+                radius: 30.r,  // Responsive radius using ScreenUtil
+                backgroundColor: kGrayLight,  // Light gray background
+                child: Image.network(
+                  category['imageUrl'], 
+                  fit: BoxFit.contain
+                ),  // Category image
+              ),
+              // Category title using reusable text component
+              title: ReusableText(
+                text: category['title'], 
+                style: appStyle(12, kGray, FontWeight.normal)
+              ),
+              // Arrow icon indicating the tile is tappable
+              trailing: Icon(Icons.arrow_forward_ios_rounded, size: 15.r, color: kGray),
+            );
+        
+          }),
+        ),
+        ),
       )
       // Body is intentionally left empty for now; replace with category list/grid.
     );

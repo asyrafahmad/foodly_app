@@ -1,3 +1,5 @@
+# Flutter Multi Vendor App [2025] Edition
+
 # foodly_app
 Create A new (foodly_app) Flutter project.
 
