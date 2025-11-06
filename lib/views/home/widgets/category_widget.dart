@@ -8,7 +8,7 @@ import 'package:foodly_app/common/app_style.dart'; // app-specific text style he
 import 'package:foodly_app/common/reusable_text.dart'; // reusable text widget used by the app
 import 'package:foodly_app/constants/constants.dart'; // shared constants (colors, widths, etc.)
 import 'package:foodly_app/controller/category_controller.dart'; // controller that manages category state
-import 'package:foodly_app/views/category/all_categories.dart'; // screen showing all categories
+import 'package:foodly_app/views/categories/all_categories.dart'; // screen showing all categories
 import 'package:get/get.dart'; // GetX for state management and navigation
 
 class CategoryWidget extends StatelessWidget { // stateless widget representing a single category tile

@@ -51,24 +51,7 @@ class AllCategories extends StatelessWidget {
             var category = categories[i];
         
             // Each category is displayed as a ListTile
-            return ListTile(
-              // Leading circular avatar with category image
-              leading: CircleAvatar(
-                radius: 30.r,  // Responsive radius using ScreenUtil
-                backgroundColor: kGrayLight,  // Light gray background
-                child: Image.network(
-                  category['imageUrl'], 
-                  fit: BoxFit.contain
-                ),  // Category image
-              ),
-              // Category title using reusable text component
-              title: ReusableText(
-                text: category['title'], 
-                style: appStyle(12, kGray, FontWeight.normal)
-              ),
-              // Arrow icon indicating the tile is tappable
-              trailing: Icon(Icons.arrow_forward_ios_rounded, size: 15.r, color: kGray),
-            );
+            return CategoryTile(category: category);
         
           }),
         ),
