@@ -5,6 +5,7 @@ List<dynamic> categories = [
     "value": "fried_rice",
     "imageUrl":
         "https://d326fntlu7tb1e.cloudfront.net/uploads/4a4cd06e-94de-4478-8588-66eee01354d4-rice.png",
+    "imageAsset": "BentoBox.png",
     "createdAt": "2023-10-24T16:12:23.571Z",
     "updatedAt": "2023-10-24T16:12:23.571Z",
     "__v": 0
@@ -15,6 +16,7 @@ List<dynamic> categories = [
     "value": "curry",
     "imageUrl":
         "https://d326fntlu7tb1e.cloudfront.net/uploads/ee2d952c-1d7d-48f7-81b3-cb967343eb6c-curry.png",
+    "imageAsset": "curry.png",
     "__v": 0
   },
   {
@@ -23,6 +25,7 @@ List<dynamic> categories = [
     "value": "pizza",
     "imageUrl":
         "https://d326fntlu7tb1e.cloudfront.net/uploads/466693e6-f999-42e0-8794-09325ece1b45-Pizza.png",
+    "imageAsset": "Pizza.png",
     "__v": 0
   },
   {
@@ -31,6 +34,7 @@ List<dynamic> categories = [
     "value": "pasta",
     "imageUrl":
         "https://d326fntlu7tb1e.cloudfront.net/uploads/6645cf41-bc89-4dd0-9f80-bba9487633b2-Spaghetti.png",
+    "imageAsset": "Spaghetti.png",
     "__v": 0
   },
   {
@@ -39,6 +43,7 @@ List<dynamic> categories = [
     "value": "beverages",
     "imageUrl":
         "https://d326fntlu7tb1e.cloudfront.net/uploads/93c4b3df-9e55-4308-a834-9fe4ad67c0b3-bar.png",
+    "imageAsset": "bar.png",
     "__v": 0
   },
   {
@@ -47,6 +52,7 @@ List<dynamic> categories = [
     "value": "burgers",
     "imageUrl":
         "https://d326fntlu7tb1e.cloudfront.net/uploads/3c94bc09-b8b9-4961-accb-f68b7e8121cc-Hamburger.png",
+    "imageAsset": "Hamburger.png",
     "__v": 0
   },
   {
@@ -55,6 +61,7 @@ List<dynamic> categories = [
     "value": "chicken",
     "imageUrl":
         "https://d326fntlu7tb1e.cloudfront.net/uploads/139718b2-2832-40c5-8d7b-11fd9feb0aac-chicken.png",
+    "imageAsset": "chicken.png",
     "__v": 0
   },
   {
@@ -63,6 +70,7 @@ List<dynamic> categories = [
     "value": "more",
     "imageUrl":
         "https://d326fntlu7tb1e.cloudfront.net/uploads/08323562-a3c6-461d-95a3-b3817c99871b-more.png",
+    "imageAsset": "more.png",
     "__v": 0
   }
 ];

@@ -11,6 +11,7 @@ import 'package:foodly_app/common/reusable_text.dart';
 import 'package:foodly_app/constants/constants.dart';
 // UI data including category information
 import 'package:foodly_app/constants/uidata.dart';
+import 'package:foodly_app/views/categories/widgets/category_tile.dart';
 
 
 /// Screen that shows all categories.

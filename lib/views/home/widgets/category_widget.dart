@@ -22,7 +22,7 @@ class CategoryWidget extends StatelessWidget { // stateless widget representing 
   @override
   Widget build(BuildContext context) { // build method returns the widget tree for this component
 
-    final controller = Get.find<CategoryController>(); // obtain the CategoryController instance registered in GetX
+    final controller = Get.put(CategoryController()); // obtain the CategoryController instance registered in GetX
     
     return GestureDetector( // makes the tile tappable
       onTap: () { // handler invoked when user taps the tile
@@ -55,7 +55,12 @@ class CategoryWidget extends StatelessWidget { // stateless widget representing 
           children: [
             SizedBox( // fixed-height box to contain the image
               height: 40.h, // responsive height for the image container
-              child: Image.network(category['imageUrl'], fit: BoxFit.contain), // load category image from network and contain within box
+              // child: Image.network(category['imageUrl'], fit: BoxFit.contain), // load category image from network and contain within box
+                // Load category image from local assets (assets/foodly/image/)
+                child: Image.asset(
+                  'assets/foodly/${category['imageAsset']}',
+                  fit: BoxFit.contain
+                ), // load category image from assets and contain within box
             ),
             ReusableText( // display category title using the app's reusable text widget
               text: category['title'],
