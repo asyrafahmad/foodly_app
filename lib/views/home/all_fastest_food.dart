@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodly_app/common/app_style.dart';
 import 'package:foodly_app/common/reusable_text.dart';
 import 'package:foodly_app/constants/constants.dart';
 
