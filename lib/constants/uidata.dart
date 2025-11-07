@@ -15,7 +15,7 @@ List<dynamic> categories = [
     "title": "Curry",
     "value": "curry",
     "imageUrl":
-        "https://d326fntlu7tb1e.cloudfront.net/uploads/ee2d952c-1d7d-48f7-81b3-cb967343eb6c-curry.png",
+        "https://images.unsplash.com/photo-1600891964599-f61ba0e24092",
     "imageAsset": "curry.png",
     "__v": 0
   },
@@ -51,7 +51,7 @@ List<dynamic> categories = [
     "title": "Burgers",
     "value": "burgers",
     "imageUrl":
-        "https://d326fntlu7tb1e.cloudfront.net/uploads/3c94bc09-b8b9-4961-accb-f68b7e8121cc-Hamburger.png",
+        "https://images.unsplash.com/photo-1550547660-d9450f859349",
     "imageAsset": "Hamburger.png",
     "__v": 0
   },
@@ -82,10 +82,11 @@ List<dynamic> restaurants = [
     "time": "6:00am - 9:00pm",
     "imageUrl":
         "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
+    "imageAsset": "LapisaraEatery.jpg",
     "owner": "fdfsdfsdfs",
     "code": "41007428",
     "logoUrl":
-        "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
+        "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d",
     "rating": 5,
     "ratingCount": "6765",
     "coords": {
@@ -104,10 +105,11 @@ List<dynamic> restaurants = [
     "time": "6:00am - 9:00pm",
     "imageUrl":
         "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
+    "imageAsset": "BurgerKing.jpg",
     "owner": "sjgdsjgfjshhjs",
     "code": "41007428",
     "logoUrl":
-        "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
+        "https://images.unsplash.com/photo-1518717758536-85ae29035b6d",
     "rating": 5,
     "ratingCount": "3278",
     "coords": {
@@ -126,10 +128,11 @@ List<dynamic> restaurants = [
     "time": "6:00am - 9:00pm",
     "imageUrl":
         "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
+    "imageAsset": "LaFoods.jpg",
     "owner": "fgdgdfgd",
     "code": "41007428",
     "logoUrl":
-        "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
+        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
     "rating": 5,
     "ratingCount": "5666",
     "coords": {
@@ -148,10 +151,11 @@ List<dynamic> restaurants = [
     "time": "6:00am - 9:00pm",
     "imageUrl":
         "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
+    "imageAsset": "ItalianRestaurant.jpg",
     "owner": "sjgdsjgfjshhjs",
     "code": "41007428",
     "logoUrl":
-        "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
+        "https://images.unsplash.com/photo-1499346030926-9a72daac6c63",
     "rating": 5,
     "ratingCount": "3278",
     "coords": {

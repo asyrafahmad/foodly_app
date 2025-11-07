@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:foodly_app/common/app_style.dart';
+import 'package:foodly_app/common/reusable_text.dart';
 import 'package:foodly_app/constants/constants.dart';
 
 class RestaurantWidget extends StatelessWidget {
@@ -37,8 +40,12 @@ class RestaurantWidget extends StatelessWidget {
                       child: SizedBox(
                         height: 112.h,
                         width: width * 0.8,
-                        child: Image.network(
-                          image,
+                        // child: Image.network(
+                        //   image,
+                        //   fit: BoxFit.fitWidth,
+                        // ),
+                        child: Image.asset(
+                          'assets/foodly/${image}',
                           fit: BoxFit.fitWidth,
                         )
                       ),
@@ -74,7 +81,43 @@ class RestaurantWidget extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    
+                    ReusableText(
+                      text: title, 
+                      style: appStyle(12, kDark, FontWeight.w500)
+                    ),
+
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        ReusableText(
+                          text: 'Delivery Time', 
+                          style: appStyle(12, kGray, FontWeight.w500)
+                        ),
+                        ReusableText(
+                          text: time, 
+                          style: appStyle(12, kDark, FontWeight.w500)
+                        )
+                      ]
+                    ),
+
+                    Row(
+                      children: [
+                        RatingBarIndicator(
+                          rating: 5,
+                          itemBuilder: (context, index) => const Icon(
+                            Icons.star, 
+                            color: kPrimary
+                          ),
+                          itemCount: 5,
+                          itemSize: 15.h,
+                        ),
+                        SizedBox(width: 10.w),
+                        ReusableText(
+                          text: "$rating + reviews and ratings",
+                          style: (appStyle(9, kGray, FontWeight.w500))
+                        )
+                      ]
+                    )
                   ],
                 ),
               )
