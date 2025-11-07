@@ -4,7 +4,7 @@ List<dynamic> categories = [
     "title": "Fried Rice",
     "value": "fried_rice",
     "imageUrl":
-        "https://d326fntlu7tb1e.cloudfront.net/uploads/4a4cd06e-94de-4478-8588-66eee01354d4-rice.png",
+        "https://images.unsplash.com/photo-1603133872878-684f208fb84b",
     "imageAsset": "BentoBox.png",
     "createdAt": "2023-10-24T16:12:23.571Z",
     "updatedAt": "2023-10-24T16:12:23.571Z",
@@ -192,8 +192,8 @@ List <Map<String, dynamic>> foods = [
       {"id": 5, "title": "Sugar", "price": "0.50"}
     ],
     "imageUrl": 
-      "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp"
-    ,
+      "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
+    "imageAsset": "Tiramisu.jpg",
     "__v": 0,
     "category": "6531209dbbe4998e90af3fef",
     "time": "35 min"
@@ -219,8 +219,8 @@ List <Map<String, dynamic>> foods = [
       {"id": 5, "title": "Pasta", "price": "3.00"}
     ],
     "imageUrl": 
-      "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp"
-    ,
+      "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
+    "imageAsset": "SpaghettiCarbonara.jpg",
     "__v": 2,
     "category": "6531209dbbe4998e90af3fef",
     "time": "20 min"
@@ -246,8 +246,8 @@ List <Map<String, dynamic>> foods = [
       {"id": 5, "title": "Vinaigrette", "price": "0.50"}
     ],
    "imageUrl": 
-      "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp"
-    ,
+      "https://images.unsplash.com/photo-1550304943-4f24f54ddde9",
+    "imageAsset": "VeganSalad.jpg",
     "__v": 0,
     "category": "6531209dbbe4998e90af3fef",
     "time": "55 min"
@@ -271,8 +271,8 @@ List <Map<String, dynamic>> foods = [
       {"id": 3, "title": "Ketch up", "price": "0.50"}
     ],
     "imageUrl": 
-      "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp"
-    ,
+      "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
+    "imageAsset": "MargheritaPizza.jpg",
     "__v": 0,
     "category": "6531209dbbe4998e90af3fef",
     "time": "30 min"
@@ -298,8 +298,8 @@ List <Map<String, dynamic>> foods = [
       {"id": 5, "title": "Ice", "price": "0.50"}
     ],
    "imageUrl": 
-      "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp"
-    ,
+      "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
+    "imageAsset": "TropicalFruitSmoothie.jpg",
     "__v": 0,
     "category": "6531209dbbe4998e90af3fef",
     "time": "25 min"
@@ -331,8 +331,8 @@ List <Map<String, dynamic>> foods = [
       {"id": 5, "title": "Barbecue Sauce", "price": "1.00"}
     ],
     "imageUrl": 
-      "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp"
-    ,
+      "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
+    "imageAsset": "MixedGrillPlatter.jpg",
     "__v": 0,
     "category": "6531209dbbe4998e90af3fef",
     "time": "45 min"
