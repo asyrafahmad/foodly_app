@@ -8,6 +8,8 @@ import 'package:foodly_app/views/home/all_fastest_food.dart';
 import 'package:foodly_app/views/home/all_nearby_restaurants.dart';
 import 'package:foodly_app/views/home/recommendations.dart';
 import 'package:foodly_app/views/home/widgets/category_list.dart';
+import 'package:foodly_app/views/home/widgets/food_list.dart';
+import 'package:foodly_app/views/home/widgets/nearby_restaurant_list.dart';
 import 'package:get/get.dart';
 
 class HomePage extends StatelessWidget {
@@ -33,7 +35,9 @@ class HomePage extends StatelessWidget {
                     transition: Transition.cupertino,
                     duration: const Duration(milliseconds: 300),
                   );  
-                }),
+                }
+              ),
+              const NearbyRestaurantsList(),
               Heading(
                 text: 'Try Something New', 
                 onTap: () {
@@ -41,7 +45,9 @@ class HomePage extends StatelessWidget {
                     transition: Transition.cupertino,
                     duration: const Duration(milliseconds: 300),
                   );  
-              }),
+                }
+              ),
+              const FoodList(),
               Heading(
                 text: 'Food closer to you', 
                 onTap: () {
@@ -49,7 +55,9 @@ class HomePage extends StatelessWidget {
                     transition: Transition.cupertino,
                     duration: const Duration(milliseconds: 300),
                   );  
-              }),
+                }
+              ),
+              const FoodList(),
             ],
           )
         ),
