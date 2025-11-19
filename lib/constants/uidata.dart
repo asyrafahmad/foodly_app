@@ -1,7 +1,7 @@
 List<dynamic> categories = [
   {
     "_id": "6537ece708ff5b7de97d0695",
-    "title": "Fried Rice",
+    "title": "Nasi Goreng",
     "value": "fried_rice",
     "imageUrl":
         "https://images.unsplash.com/photo-1603133872878-684f208fb84b",
@@ -78,7 +78,7 @@ List<dynamic> categories = [
 List<dynamic> restaurants = [
   {
     "_id": "6530ebbcc9e72013e5b65933",
-    "title": "Lapisara Eatery",
+    "title": "Waffle",
     "time": "6:00am - 9:00pm",
     "imageUrl":
         "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
@@ -124,7 +124,7 @@ List<dynamic> restaurants = [
   },
   {
     "_id": "6530eb66c9e72013e5b65931",
-    "title": "La Foods",
+    "title": "Side Food",
     "time": "6:00am - 9:00pm",
     "imageUrl":
         "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",

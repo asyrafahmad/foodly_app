@@ -1,7 +1,3 @@
-// ...existing code...
-
-// ignore_for_file: must_be_immutable // allow non-final fields in this widget (silence lint)
-
 import 'package:flutter/material.dart'; // Flutter material widgets
 import 'package:flutter_screenutil/flutter_screenutil.dart'; // responsive sizing utils (w, h, r)
 import 'package:foodly_app/common/app_style.dart'; // app-specific text style helper

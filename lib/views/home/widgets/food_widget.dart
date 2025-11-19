@@ -41,7 +41,7 @@ class FoodWidget extends StatelessWidget {
                     //   fit: BoxFit.fitWidth,
                     // ),
                     child: Image.asset(
-                      'assets/foodly/${image}',
+                      'assets/foodly/$image',
                       fit: BoxFit.fitWidth,
                     )
                   ),
@@ -61,7 +61,7 @@ class FoodWidget extends StatelessWidget {
                           style: appStyle(12, kDark, FontWeight.w500)
                         ),
                         ReusableText(
-                          text: "\$ $price" , 
+                          text: "RM $price" , 
                           style: appStyle(12, kPrimary, FontWeight.w600)
                         ),
                       ],

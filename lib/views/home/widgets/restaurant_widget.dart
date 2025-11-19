@@ -45,7 +45,7 @@ class RestaurantWidget extends StatelessWidget {
                         //   fit: BoxFit.fitWidth,
                         // ),
                         child: Image.asset(
-                          'assets/foodly/${image}',
+                          'assets/foodly/$image',
                           fit: BoxFit.fitWidth,
                         )
                       ),
