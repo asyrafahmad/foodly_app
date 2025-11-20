@@ -16,21 +16,13 @@ FetchHook useFetchCategories() {
     isLoading.value = true;
 
     try {
-      print("fetchData called /api/category/random");
+      print("fetchData called /api/category");
 
-      Uri url = Uri.parse('$appLocalBaseUrl/api/category/random');
+      Uri url = Uri.parse('$appLocalBaseUrl/api/category');
       print("URL = $url");
 
       final response = await http.get(url);
       print("RESPONSE = $response");
-
-      // if(response.statusCode == 200) {
-      //   categoriesItems.value = categoriesModelFromJson(response.body);
-      // } else {
-      //   apiError.value = apiErrorFromJson(response.body);
-      // }
-      
-      print (response);
 
       if (response.statusCode == 200) {
 
