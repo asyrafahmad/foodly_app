@@ -50,7 +50,7 @@ class HomePage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // Placeholder for future category list implementation
-                // const CategoryList(),
+                const CategoryList(),
                 
                 /// Section 1: Nearby Restaurants
                 /// Heading widget with tap navigation to view all nearby restaurants.

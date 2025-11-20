@@ -21,4 +21,6 @@ double width = 375.w;
 
 
 const String appBaseUrl = "http://localhost:6013";
+// const String appLocalBaseUrl = "http://172.16.144.96:6013";
+const String appLocalBaseUrl = "http://10.89.179.50:6013";
 
