@@ -5,7 +5,7 @@ import 'package:foodly_app/models/categories.dart';
 import 'package:foodly_app/models/hook_models/hook_result.dart';
 import 'package:http/http.dart' as http;
 
-FetchHook useFetchCategories() {
+FetchHook useFetchAllCategories() {
 
   final categoriesItems = useState<List<CategoriesModel>?>(null);
   final isLoading = useState<bool>(false);
@@ -28,6 +28,8 @@ FetchHook useFetchCategories() {
 
         final List<CategoriesModel> categories = categoriesModelFromJson(response.body);
         categoriesItems.value = categories;
+        
+        print("RESPONSE TIME = Finish response");
 
       } else {
 

@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart'; // Flutter material widgets
 import 'package:flutter_screenutil/flutter_screenutil.dart'; // responsive sizing utils (w, h, r)
 import 'package:foodly_app/common/app_style.dart'; // app-specific text style helper
@@ -49,21 +50,40 @@ class CategoryWidget extends StatelessWidget { // stateless widget representing 
             width: 0.5.w // border thickness (responsive)
           )
         ),
-        child: Column( // vertical layout: image above, title below
+        child: Column(
           children: [
-            SizedBox( // fixed-height box to contain the image
-              height: 40.h, // responsive height for the image container
-              child: Image.network(category.imageUrl, fit: BoxFit.contain), // load category image from network and contain within box
-                // Load category image from local assets (assets/foodly/image/)
-                // child: Image.asset(
-                //   'assets/foodly/${category.imageUrl}',
-                //   fit: BoxFit.contain
-                // ), // load category image from assets and contain within box
+            SizedBox(
+              height: 40.h,
+
+              // CachedNetworkImage loads the image efficiently AND saves it locally,
+              // so the next time your app opens, it loads instantly from device cache
+              // instead of downloading again.
+              child: CachedNetworkImage(
+                // Add Unsplash optimization parameters:
+                // - auto=format → choose best format (WebP)
+                // - fit=crop     → crops correctly for mobile
+                // - w=400        → reduce image size (faster load)
+                // - q=70         → compress image quality for speed
+                imageUrl: "${category.imageUrl}?auto=format&fit=crop&w=400&q=70",
+
+                fit: BoxFit.contain, // keep the image inside the box without stretching
+
+                // Show loading spinner while the image is downloading.
+                // Without this, the UI may show a blank empty space.
+                placeholder: (context, url) => Center(
+                  child: CircularProgressIndicator(strokeWidth: 2),
+                ),
+
+                // If the URL is broken or fails to load, show an error icon instead.
+                errorWidget: (context, url, error) => Icon(Icons.error),
+              ),
             ),
-            ReusableText( // display category title using the app's reusable text widget
+
+            // Display the category name using your custom reusable text component.
+            ReusableText(
               text: category.title,
-              style: appStyle(12, kDark, FontWeight.normal) // text style from appStyle helper
-            )
+              style: appStyle(12, kDark, FontWeight.normal),
+            ),
           ],
         )
       )),
