@@ -2,14 +2,13 @@
 //
 //     final restaurantModel = restaurantModelFromJson(jsonString);
 
-import 'package:meta/meta.dart';
 import 'dart:convert';
 
-List<RestaurantModel> restaurantModelFromJson(String str) => List<RestaurantModel>.from(json.decode(str).map((x) => RestaurantModel.fromJson(x)));
+List<RestaurantsModel> restaurantModelFromJson(String str) => List<RestaurantsModel>.from(json.decode(str).map((x) => RestaurantsModel.fromJson(x)));
 
-String restaurantModelToJson(List<RestaurantModel> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+String restaurantModelToJson(List<RestaurantsModel> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
-class RestaurantModel {
+class RestaurantsModel {
     final String id;
     final String title;
     final String time;
@@ -27,7 +26,7 @@ class RestaurantModel {
     final String verificationMessage;
     final Coordinates coordinates;
 
-    RestaurantModel({
+    RestaurantsModel({
         required this.id,
         required this.title,
         required this.time,
@@ -46,7 +45,7 @@ class RestaurantModel {
         required this.coordinates,
     });
 
-    factory RestaurantModel.fromJson(Map<String, dynamic> json) => RestaurantModel(
+    factory RestaurantsModel.fromJson(Map<String, dynamic> json) => RestaurantsModel(
         id: json["_id"],
         title: json["title"],
         time: json["time"],

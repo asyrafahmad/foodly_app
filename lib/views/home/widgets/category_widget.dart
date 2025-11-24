@@ -9,6 +9,7 @@ import 'package:foodly_app/models/categories.dart';
 import 'package:foodly_app/views/categories/all_categories.dart'; // screen showing all categories
 import 'package:get/get.dart'; // GetX for state management and navigation
 
+// ignore: must_be_immutable
 class CategoryWidget extends StatelessWidget { // stateless widget representing a single category tile
   
   CategoryWidget({ // constructor for the widget
