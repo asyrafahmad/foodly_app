@@ -3,11 +3,12 @@ import 'package:foodly_app/constants/constants.dart';
 import 'package:foodly_app/models/apiError.dart';
 import 'package:foodly_app/models/categories.dart';
 import 'package:foodly_app/models/hook_models/hook_result.dart';
+import 'package:foodly_app/models/restaurant.dart';
 import 'package:http/http.dart' as http;
 
-FetchHook useFetchAllCategories() {
+FetchHook useFetchAllRestaurants(String code) {
 
-  final categoriesItems = useState<List<CategoriesModel>?>(null);
+  final restaurantItems = useState<List<RestaurantsModel>?>(null);
   final isLoading = useState<bool>(false);
   final error = useState<Exception?>(null);
   final apiError = useState<ApiError?>(null);
@@ -16,20 +17,19 @@ FetchHook useFetchAllCategories() {
     isLoading.value = true;
 
     try {
-      print("fetchData called /api/category");
+      print("fetchData called /api/restaurant/all/$code");
 
-      Uri url = Uri.parse('$appLocalBaseUrl/api/category');
+      Uri url = Uri.parse('$appLocalBaseUrl/api/restaurant');
       print("URL = $url");
 
       final response = await http.get(url);
       print("RESPONSE = $response");
+      print (response);
 
       if (response.statusCode == 200) {
 
-        final List<CategoriesModel> categories = categoriesModelFromJson(response.body);
-        categoriesItems.value = categories;
-        
-        print("RESPONSE TIME = Finish response");
+        final List<RestaurantsModel> restaurants = restaurantModelFromJson(response.body);
+        restaurantItems.value = restaurants;
 
       } else {
 
@@ -61,7 +61,7 @@ FetchHook useFetchAllCategories() {
   }
 
   return FetchHook(
-    data: categoriesItems.value,
+    data: restaurantItems.value,
     isLoading: isLoading.value,
     error: error.value?.toString(),
     refetch: refetch,

@@ -3,6 +3,7 @@ import 'package:foodly_app/constants/constants.dart';
 import 'package:foodly_app/models/apiError.dart';
 import 'package:foodly_app/models/categories.dart';
 import 'package:foodly_app/models/hook_models/hook_result.dart';
+import 'package:foodly_app/models/restaurant.dart';
 import 'package:http/http.dart' as http;
 
 FetchHook useFetchRestaurants(String code) {
@@ -60,7 +61,7 @@ FetchHook useFetchRestaurants(String code) {
   }
 
   return FetchHook(
-    data: categoriesItems.value,
+    data: restaurantItems.value,
     isLoading: isLoading.value,
     error: error.value?.toString(),
     refetch: refetch,

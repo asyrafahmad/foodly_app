@@ -4,11 +4,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:foodly_app/common/app_style.dart';
 import 'package:foodly_app/common/reusable_text.dart';
 import 'package:foodly_app/constants/constants.dart';
+import 'package:foodly_app/models/restaurant.dart';
 
 class RestaurantTile extends StatelessWidget {
   const RestaurantTile({super.key, required this.restaurant});
 
-  final dynamic restaurant;
+  final RestaurantsModel restaurant;
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +39,7 @@ class RestaurantTile extends StatelessWidget {
                           width: 70.w,
                           height: 70.h,
                           child: Image.asset(
-                            'assets/foodly/${restaurant["imageAsset"]}',
+                            'assets/foodly/${restaurant.imageUrl}',
                             fit: BoxFit.cover,
                           )
                         ),
@@ -74,13 +75,45 @@ class RestaurantTile extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       ReusableText(
-                        text: restaurant['title'], 
+                        text: restaurant.title, 
                         style: appStyle(11, kDark, FontWeight.w400)
+                      ),
+                      ReusableText(
+                        text: "Delivery Time: ${restaurant.time}", 
+                        style: appStyle(11, kGray, FontWeight.w400)
+                      ),
+                      SizedBox(
+                        width: width * 0.7,
+                        child: Text(
+                          restaurant.coordinates.address,
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 2,
+                          style: appStyle(11, kGray, FontWeight.w400)
+                        )
                       )
                     ]
                   )
                 ]
               )
+            )
+          ),
+
+          Positioned(
+            right: 5.w,
+            top: 6.h,
+            child: Container(
+              width: 60.w,
+              height: 19.h,
+              decoration: BoxDecoration(
+                color: restaurant.isAvailable || restaurant.isAvailable == null ? kPrimary : kSecondary,
+                borderRadius: BorderRadius.circular(10.r),
+              ),
+              child: Center(
+                child: ReusableText(
+                  text: restaurant.isAvailable == true || restaurant.isAvailable == null ? "Open" : "Closed", 
+                  style: appStyle(12, kLightWhite, FontWeight.w600)
+                ),
+              ),
             )
           )
         ]
