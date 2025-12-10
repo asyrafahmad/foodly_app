@@ -32,23 +32,20 @@ class RecommendationsPage extends HookWidget {
       ),
       body: BackgroundContainer(
         color: Colors.white,
-        child: Padding(
-          padding: EdgeInsets.all(12.h),
-          child: isLoading 
-            ? const FoodsListShimmer() 
-            : Padding(
-                padding: EdgeInsets.fromLTRB(12.w, 12.h, 12.w, 12.h),
-                child: ListView(
-                  children: List.generate(foodsList!.length, (i) {
-                    FoodsModel food = foodsList[i];
-                    return FoodTile(
-                      food: food,
-                    );
-                  }),
-                ),
+        child: isLoading 
+          ? const FoodsListShimmer() 
+          : Padding(
+              padding: EdgeInsets.all(12.h),
+              child: ListView(
+                children: List.generate(foodsList!.length, (i) {
+                  FoodsModel food = foodsList[i];
+                  return FoodTile(
+                    food: food,
+                  );
+                }),
               ),
-        ),
-      )
+            ),
+      ),
     );
   }
 }
