@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:foodly_app/constants/constants.dart';
 import 'package:foodly_app/models/apiError.dart';
@@ -27,8 +28,7 @@ FetchHook useFetchFoods(String code) {
 
       if (response.statusCode == 200) {
 
-        final List<FoodsModel> foodsList = foodsModelFromJson(response.body);
-        foodsList.value = foodsList;
+        foodsItem.value = foodsModelFromJson(response.body);
 
       } else {
 
