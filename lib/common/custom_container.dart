@@ -11,11 +11,12 @@ import 'package:foodly_app/constants/constants.dart';
 class CustomContainer extends StatelessWidget {
   /// Constructor requires the widget that will be displayed inside this container.
   /// `super.key` forwards the widget key to the StatelessWidget base class.
-  CustomContainer({super.key, required this.containerContent});
+  CustomContainer({super.key, required this.containerContent, this.color});
 
   /// The child content shown inside the container.
   /// Made mutable and `must_be_immutable` is ignored to allow easy composition.
   Widget containerContent;
+  Color? color;
 
   @override
   Widget build(BuildContext context) {
