@@ -3,8 +3,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:foodly_app/common/custom_container.dart';
 import 'package:foodly_app/common/custom_text_field.dart';
+import 'package:foodly_app/common/shimmers/foodlist_shimmer.dart';
 import 'package:foodly_app/constants/constants.dart';
+import 'package:foodly_app/controller/search_food_controller.dart';
 import 'package:foodly_app/views/search/loading_widget.dart';
+import 'package:foodly_app/views/search/search_results.dart';
+import 'package:get/get.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({super.key});
@@ -18,7 +22,10 @@ class _SearchPageState extends State<SearchPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+
+    final controller = Get.put(SearchFoodController());
+
+    return Obx(() => Scaffold(
       backgroundColor: kPrimary,
       appBar: AppBar(
         toolbarHeight: 74.h,
@@ -32,7 +39,9 @@ class _SearchPageState extends State<SearchPage> {
             keyboardType: TextInputType.text,
             hintText: "Search For Foods",
             suffixIcon: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                controller.searchFoods(_searchController.text);
+              },
               child: Icon(Ionicons.search_circle, size: 40 , color: kGray)
             ),
           )
@@ -41,9 +50,9 @@ class _SearchPageState extends State<SearchPage> {
       body: SafeArea(
         child: CustomContainer(
           color: Colors.white,
-          containerContent: const LoadingWidget(
-
-          )
+          containerContent: controller.isLoading 
+            ? FoodsListShimmer() 
+            : controller.searchResults == null ? const LoadingWidget() : const SearchResults())
         )
       ),
     );

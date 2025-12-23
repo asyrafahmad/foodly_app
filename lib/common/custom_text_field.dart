@@ -4,7 +4,17 @@ import 'package:foodly_app/common/app_style.dart';
 import 'package:foodly_app/constants/constants.dart';
 
 class CustomTextWidget extends StatelessWidget {
-  const CustomTextWidget({super.key, this.keyboardType, this.controller, this.onEditingComplete, this.obscureText, this.suffixIcon, this.prefixIcon, this.validator});
+  const CustomTextWidget({
+    super.key, 
+    this.keyboardType, 
+    this.controller, 
+    this.onEditingComplete, 
+    this.obscureText, 
+    this.suffixIcon, 
+    this.prefixIcon, 
+    this.validator,
+    this.hintText
+  });
 
   final TextInputType? keyboardType;
   final TextEditingController? controller;
