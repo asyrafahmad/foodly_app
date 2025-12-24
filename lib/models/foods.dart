@@ -20,7 +20,7 @@ class FoodsModel {
     final double price;
     final List<dynamic> additives;
     final List<String> imageUrl;
-    final int v;
+    // final int v;
 
     FoodsModel({
         required this.id,
@@ -38,7 +38,7 @@ class FoodsModel {
         required this.price,
         required this.additives,
         required this.imageUrl,
-        required this.v,
+        // required this.v,
     });
 
     factory FoodsModel.fromJson(Map<String, dynamic> json) => FoodsModel(
@@ -51,13 +51,13 @@ class FoodsModel {
         code: json["code"],
         isAvailable: json["isAvailable"],
         restaurant: json["restaurant"],
-        rating: json["rating"],
+        rating: json["rating"]?.toDouble(),
         ratingCount: json["ratingCount"],
         description: json["description"],
-        price: json["price"],
+        price: json["price"]?.toDouble(),
         additives: List<dynamic>.from(json["additives"].map((x) => x)),
         imageUrl: List<String>.from(json["imageUrl"].map((x) => x)),
-        v: json["__v"],
+        // v: json["__v"] ?? 0,
     );
 
     Map<String, dynamic> toJson() => {
@@ -76,6 +76,6 @@ class FoodsModel {
         "price": price,
         "additives": List<dynamic>.from(additives.map((x) => x)),
         "imageUrl": List<dynamic>.from(imageUrl.map((x) => x)),
-        "__v": v,
+        // "__v": v,
     };
 }
