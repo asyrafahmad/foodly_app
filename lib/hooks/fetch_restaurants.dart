@@ -17,14 +17,14 @@ FetchHook useFetchRestaurants(String code) {
     isLoading.value = true;
 
     try {
-      print("fetchData called /api/restaurant/$code");
+      // print("fetchData called /api/restaurant/$code");
 
       Uri url = Uri.parse('$appLocalBaseUrl/api/restaurant');
-      print("URL = $url");
+      // print("URL = $url");
 
       final response = await http.get(url);
-      print("RESPONSE = $response");
-      print (response);
+      // print("RESPONSE = $response");
+      // print (response);
 
       if (response.statusCode == 200) {
 

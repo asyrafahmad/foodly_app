@@ -23,7 +23,7 @@ FetchHook useFetchAllRestaurants(String code) {
       print("URL = $url");
 
       final response = await http.get(url);
-      print("RESPONSE = $response");
+      print("RESPONSEs = $response");
       print (response);
 
       if (response.statusCode == 200) {

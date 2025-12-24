@@ -7,6 +7,7 @@ import 'package:http/http.dart' as http;
 
 class SearchFoodController extends GetxController{
 
+  /* isLoading */
   RxBool _isLoading = false.obs;
 
   bool get isLoading => _isLoading.value;
@@ -14,13 +15,24 @@ class SearchFoodController extends GetxController{
   set setLoading(bool value) {
     _isLoading.value = value;
   }
+  /* isLoading */
+
+  /* isTriggered */
+  RxBool _isTriggered = false.obs;
+
+  bool get isTriggered => _isTriggered.value;
+
+  set setTrigger(bool value) {
+    _isTriggered.value = value;
+  }
+  /* isTriggered */
 
   List<FoodsModel>? searchResults;
 
   void searchFoods(String key) async {
     setLoading = true;
 
-    Uri url = Uri.parse("$appBaseUrl/foods/search/$key");
+    Uri url = Uri.parse("$appBaseUrl/api/foods/search/$key");
 
     try {
       var response = await http.get(url);

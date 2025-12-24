@@ -11,8 +11,10 @@ class LoadingWidget extends StatelessWidget {
     return Container(
       width: width,
       height: height,
-      child: Padding(padding: EdgeInsets.only(bottom: 180.h), 
-      child: LottieBuilder.asset("assets/anime/delivery.json", width: width, height: height/2))
+      child: Padding(
+        padding: EdgeInsets.only(bottom: 180.h), 
+        child: LottieBuilder.asset("assets/anime/delivery.json", width: width, height: height/2)
+      ),
     );
   }
 }

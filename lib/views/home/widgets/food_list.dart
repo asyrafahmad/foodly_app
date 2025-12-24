@@ -18,7 +18,7 @@ class FoodList extends HookWidget {
   @override
   Widget build(BuildContext context) {
 
-    final hookResults = useFetchFoods("41007428");
+    final hookResults = useFetchFoods("691697f6e8523b215771d868");
     List<FoodsModel>? foods = hookResults.data;
     bool isLoading = hookResults.isLoading;
 
@@ -28,11 +28,11 @@ class FoodList extends HookWidget {
     return Container(
       height: 184.h,
       padding: EdgeInsets.only(left: 12.w, top: 10.h),
-      child: isLoading ? NearbyShimmer() : ListView(
+      child: isLoading || foods == null ? const NearbyShimmer() : ListView(
         // Horizontal scrolling list of food cards
         scrollDirection: Axis.horizontal,
         // Build list items from the `foods` list in uidata.dart
-        children: List.generate(foods!.length, (i) {
+        children: List.generate(foods.length, (i) {
           FoodsModel food = foods[i];
 
           // FoodWidget is a reusable card widget that expects the following named args:
@@ -44,12 +44,12 @@ class FoodList extends HookWidget {
           // `food['imageUrl']` to contain the asset path (e.g. 'assets/foodly/food.png')
           // and ensure the asset is declared in pubspec.yaml. Alternatively, change
           // FoodWidget to accept a flag and call Image.asset vs Image.network accordingly.
-          return FoodWidget(
+          return (FoodWidget(
             image: food.imageUrl[0],
             title: food.title,
             time: food.time,
             price: food.price.toStringAsFixed(2),
-          );
+          ));
 
         }),
       ),

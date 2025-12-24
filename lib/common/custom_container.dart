@@ -36,7 +36,7 @@ class CustomContainer extends StatelessWidget {
         child: Container(
           // Container sets the actual background color and enforces width.
           width: width,
-          color: kOffWhite,
+          color: color??kOffWhite,
           child: SingleChildScrollView(
             // Allows the provided content to scroll when it overflows the available space.
             child: containerContent,

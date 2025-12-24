@@ -11,18 +11,20 @@ class NearbyRestaurantsList extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final hookResults = useFetchRestaurants("41007428");
+    final hookResults = useFetchRestaurants("fg43gf43r3f4");
     List<RestaurantsModel>? restaurantsList = hookResults.data;
     final isLoading = hookResults.isLoading;
 
-    return isLoading 
+    // return isLoading  // FIX ERROR ASYRAF
+    return isLoading || restaurantsList == null
       ? const NearbyShimmer() 
       : Container(
         height: 190.h,
         padding: EdgeInsets.only(left: 12.w, top: 10.h),
         child:  ListView(
           scrollDirection: Axis.horizontal,
-          children: List.generate(restaurantsList!.length, (i) {
+          // children: List.generate(restaurantsList!.length, (i) {   // FIX ERROR ASYRAF
+          children: List.generate(restaurantsList.length, (i) {
             RestaurantsModel restaurant = restaurantsList[i];
 
             return RestaurantWidget(

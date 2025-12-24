@@ -40,9 +40,20 @@ class _SearchPageState extends State<SearchPage> {
             hintText: "Search For Foods",
             suffixIcon: GestureDetector(
               onTap: () {
-                controller.searchFoods(_searchController.text);
+
+                if (controller.isTriggered == false) {
+                  controller.searchFoods(_searchController.text);
+                  controller.setTrigger = true;
+                } else {
+                  controller.searchResults = null;
+                  controller.setTrigger = false;
+                  _searchController.clear();
+                }
               },
-              child: Icon(Ionicons.search_circle, size: 40 , color: kGray)
+              child: 
+                controller.isTriggered == false 
+                ? Icon( Ionicons.search_circle , size: 40 , color: kPrimary)
+                : Icon( Ionicons.close_circle , size: 40 , color: kRed) 
             ),
           )
         )

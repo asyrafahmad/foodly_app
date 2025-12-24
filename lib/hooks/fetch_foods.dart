@@ -20,11 +20,11 @@ FetchHook useFetchFoods(String code) {
       print("fetchData called /api/foods/recommendation/$code");
 
       Uri url = Uri.parse('$appLocalBaseUrl/api/foods/recommendation/$code');
-      print("URL = $url");
+      print("URL!! = $url");
 
       final response = await http.get(url);
-      print("RESPONSE = $response");
-      print (response);
+      print("RESPONSE!! = $response");
+      print (response.body);
 
       if (response.statusCode == 200) {
 
