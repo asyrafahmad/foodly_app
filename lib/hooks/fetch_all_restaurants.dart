@@ -1,7 +1,6 @@
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:foodly_app/constants/constants.dart';
 import 'package:foodly_app/models/apiError.dart';
-import 'package:foodly_app/models/categories.dart';
 import 'package:foodly_app/models/hook_models/hook_result.dart';
 import 'package:foodly_app/models/restaurant.dart';
 import 'package:http/http.dart' as http;
@@ -17,13 +16,13 @@ FetchHook useFetchAllRestaurants(String code) {
     isLoading.value = true;
 
     try {
-      print("fetchData called /api/restaurant/all/$code");
+      print("fetchData called /api/restaurant/all/{code}");
 
-      Uri url = Uri.parse('$appLocalBaseUrl/api/restaurant');
-      print("URL = $url");
+      Uri url = Uri.parse('$appLocalBaseUrl/api/restaurant/all/$code');
+      print("URL called /api/restaurant/all/{code} = $url");
 
       final response = await http.get(url);
-      print("RESPONSEs = $response");
+      print("RESPONSE called /api/restaurant/all/{code} = $response");
       print (response);
 
       if (response.statusCode == 200) {

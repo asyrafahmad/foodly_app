@@ -9,15 +9,15 @@ class FoodsModel {
     final String title;
     final String time;
     final List<String> foodTags;
-    final String category;
     final List<String> foodType;
+    final String category;
     final String code;
     final bool isAvailable;
     final String restaurant;
-    final int rating;
+    final double rating;
     final String ratingCount;
     final String description;
-    final int price;
+    final double price;
     final List<dynamic> additives;
     final List<String> imageUrl;
     final int v;

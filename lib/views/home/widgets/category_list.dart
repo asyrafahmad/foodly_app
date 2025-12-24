@@ -19,6 +19,7 @@ class CategoryList extends HookWidget {
     final error = hookResult.error;
 
     return isLoading 
+    // return isLoading || categoriesList == null
         ? const CatergoriesShimmer() 
         : Container(
           height: 80.h,
@@ -26,6 +27,7 @@ class CategoryList extends HookWidget {
           child:  ListView(
                 scrollDirection: Axis.horizontal,
                 children: List.generate(categoriesList!.length, (i) {
+                // children: List.generate(categoriesList.length, (i) {
                   CategoriesModel category = categoriesList[i];
 
                   return CategoryWidget(category: category);

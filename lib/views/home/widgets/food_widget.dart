@@ -10,7 +10,7 @@ class FoodWidget extends StatelessWidget {
   final String image;
   final String title;
   final String time;
-  final String price;
+  final double price;
   final void Function()? onTap;
 
   @override

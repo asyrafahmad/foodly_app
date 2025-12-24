@@ -8,7 +8,7 @@ import 'package:http/http.dart' as http;
 
 FetchHook useFetchFoods(String code) {
 
-  final foodsItem = useState<List<FoodsModel>?>(null);
+  final foodsItem = useState<List<FoodsModel>>([]);
   final isLoading = useState<bool>(false);
   final error = useState<Exception?>(null);
   final apiError = useState<ApiError?>(null);
@@ -17,14 +17,14 @@ FetchHook useFetchFoods(String code) {
     isLoading.value = true;
 
     try {
-      print("fetchData called /api/foods/recommendation/$code");
+      print("fetchData called /api/foods/recommendation/{code}");
 
       Uri url = Uri.parse('$appLocalBaseUrl/api/foods/recommendation/$code');
-      print("URL!! = $url");
+      print("URL called /api/foods/recommendation/{code} = $url");
 
       final response = await http.get(url);
-      print("RESPONSE!! = $response");
-      print (response.body);
+      print("RESPONSE called /api/foods/recommendation/{code} = $response");
+      // print (response.body);
 
       if (response.statusCode == 200) {
 

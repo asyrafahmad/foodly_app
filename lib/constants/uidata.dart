@@ -24,7 +24,7 @@ List<dynamic> categories = [
     "title": "Pizza",
     "value": "pizza",
     "imageUrl":
-        "https://d326fntlu7tb1e.cloudfront.net/uploads/466693e6-f999-42e0-8794-09325ece1b45-Pizza.png",
+        "https://images.unsplash.com/photo-1600891964599-f61ba0e24092",
     "imageAsset": "Pizza.png",
     "__v": 0
   },
@@ -33,7 +33,7 @@ List<dynamic> categories = [
     "title": "Pasta",
     "value": "pasta",
     "imageUrl":
-        "https://d326fntlu7tb1e.cloudfront.net/uploads/6645cf41-bc89-4dd0-9f80-bba9487633b2-Spaghetti.png",
+        "https://images.unsplash.com/photo-1600891964599-f61ba0e24092",
     "imageAsset": "Spaghetti.png",
     "__v": 0
   },
@@ -42,7 +42,7 @@ List<dynamic> categories = [
     "title": "Beverages",
     "value": "beverages",
     "imageUrl":
-        "https://d326fntlu7tb1e.cloudfront.net/uploads/93c4b3df-9e55-4308-a834-9fe4ad67c0b3-bar.png",
+        "https://images.unsplash.com/photo-1600891964599-f61ba0e24092",
     "imageAsset": "bar.png",
     "__v": 0
   },
@@ -60,7 +60,7 @@ List<dynamic> categories = [
     "title": "Chicken",
     "value": "chicken",
     "imageUrl":
-        "https://d326fntlu7tb1e.cloudfront.net/uploads/139718b2-2832-40c5-8d7b-11fd9feb0aac-chicken.png",
+        "https://images.unsplash.com/photo-1600891964599-f61ba0e24092",
     "imageAsset": "chicken.png",
     "__v": 0
   },
@@ -69,7 +69,7 @@ List<dynamic> categories = [
     "title": "More",
     "value": "more",
     "imageUrl":
-        "https://d326fntlu7tb1e.cloudfront.net/uploads/08323562-a3c6-461d-95a3-b3817c99871b-more.png",
+        "https://images.unsplash.com/photo-1600891964599-f61ba0e24092",
     "imageAsset": "more.png",
     "__v": 0
   }
@@ -81,7 +81,7 @@ List<dynamic> restaurants = [
     "title": "Waffle",
     "time": "6:00am - 9:00pm",
     "imageUrl":
-        "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
+        "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d",
     "imageAsset": "LapisaraEatery.jpg",
     "owner": "fdfsdfsdfs",
     "code": "41007428",
@@ -104,7 +104,7 @@ List<dynamic> restaurants = [
     "title": "Burger King",
     "time": "6:00am - 9:00pm",
     "imageUrl":
-        "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
+        "https://images.unsplash.com/photo-1518717758536-85ae29035b6d",
     "imageAsset": "BurgerKing.jpg",
     "owner": "sjgdsjgfjshhjs",
     "code": "41007428",
@@ -127,7 +127,7 @@ List<dynamic> restaurants = [
     "title": "Side Food",
     "time": "6:00am - 9:00pm",
     "imageUrl":
-        "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
+        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
     "imageAsset": "LaFoods.jpg",
     "owner": "fgdgdfgd",
     "code": "41007428",
@@ -150,7 +150,7 @@ List<dynamic> restaurants = [
     "title": "Italian Restaurant",
     "time": "6:00am - 9:00pm",
     "imageUrl":
-        "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
+        "https://images.unsplash.com/photo-1499346030926-9a72daac6c63",
     "imageAsset": "ItalianRestaurant.jpg",
     "owner": "sjgdsjgfjshhjs",
     "code": "41007428",
@@ -192,7 +192,7 @@ List <Map<String, dynamic>> foods = [
       {"id": 5, "title": "Sugar", "price": "0.50"}
     ],
     "imageUrl": 
-      "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
+      "https://images.unsplash.com/photo-1499346030926-9a72daac6c63",
     "imageAsset": "Tiramisu.jpg",
     "__v": 0,
     "category": "6531209dbbe4998e90af3fef",
@@ -219,7 +219,7 @@ List <Map<String, dynamic>> foods = [
       {"id": 5, "title": "Pasta", "price": "3.00"}
     ],
     "imageUrl": 
-      "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
     "imageAsset": "SpaghettiCarbonara.jpg",
     "__v": 2,
     "category": "6531209dbbe4998e90af3fef",
@@ -271,7 +271,7 @@ List <Map<String, dynamic>> foods = [
       {"id": 3, "title": "Ketch up", "price": "0.50"}
     ],
     "imageUrl": 
-      "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
     "imageAsset": "MargheritaPizza.jpg",
     "__v": 0,
     "category": "6531209dbbe4998e90af3fef",
@@ -298,7 +298,7 @@ List <Map<String, dynamic>> foods = [
       {"id": 5, "title": "Ice", "price": "0.50"}
     ],
    "imageUrl": 
-      "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
     "imageAsset": "TropicalFruitSmoothie.jpg",
     "__v": 0,
     "category": "6531209dbbe4998e90af3fef",
@@ -331,7 +331,7 @@ List <Map<String, dynamic>> foods = [
       {"id": 5, "title": "Barbecue Sauce", "price": "1.00"}
     ],
     "imageUrl": 
-      "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
     "imageAsset": "MixedGrillPlatter.jpg",
     "__v": 0,
     "category": "6531209dbbe4998e90af3fef",
@@ -350,8 +350,8 @@ const cart = [
       "rating": 4.5,
       "ratingCount": "150",
       "imageUrl": [
-        "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
-        "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp"
+        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e"
       ]
     },
     "additives": ["Extra Cheese", "Mushrooms"],

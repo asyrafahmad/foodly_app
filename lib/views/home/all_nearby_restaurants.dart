@@ -38,8 +38,8 @@ class AllNearbyRestaurantsPage extends HookWidget {
             :  Padding(
                 padding: EdgeInsets.fromLTRB(12.w, 12.h, 12.w, 12.h),
                 child: ListView(
-                  children: List.generate(restaurants!.length, (i) {
-                    RestaurantsModel restaurant = restaurants[i];
+                  children: List.generate(restaurantsList!.length, (i) {
+                    RestaurantsModel restaurant = restaurantsList[i];
                     return RestaurantTile(
                       restaurant: restaurant,
                     );
