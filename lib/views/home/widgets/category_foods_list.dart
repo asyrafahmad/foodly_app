@@ -3,6 +3,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:foodly_app/common/shimmers/foodlist_shimmer.dart';
 import 'package:foodly_app/constants/constants.dart';
 import 'package:foodly_app/hooks/fetch_all_foods.dart';
+import 'package:foodly_app/hooks/fetch_category_foods.dart';
 import 'package:foodly_app/models/foods.dart';
 import 'package:foodly_app/views/home/widgets/food_tile.dart';
 
@@ -12,7 +13,7 @@ class CategoryFoodsList extends HookWidget {
   @override
   Widget build(BuildContext context) {
 
-    final hookResult = useFetchAllFoods("fg43gf43r3f4","dummy");
+    final hookResult = useFetchFoodsByCategory("41007428");
     List<FoodsModel>? foods= hookResult.data;
     final isLoading = hookResult.isLoading;
 

@@ -1,13 +1,16 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:foodly_app/constants/constants.dart';
+import 'package:foodly_app/controller/category_controller.dart';
 import 'package:foodly_app/models/apiError.dart';
 import 'package:foodly_app/models/foods.dart';
 import 'package:foodly_app/models/hook_models/hook_result.dart';
+import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 
-FetchHook useFetchFoods(String code) {
+FetchHook useFetchFoodsByCategory(String code) {
 
+  final controller = Get.put(CategoryController());
   final foodsItem = useState<List<FoodsModel>>([]);
   final isLoading = useState<bool>(false);
   final error = useState<Exception?>(null);
@@ -17,13 +20,13 @@ FetchHook useFetchFoods(String code) {
     isLoading.value = true;
 
     try {
-      print("fetchData called /api/foods/recommendation/{code}");
+      print("fetchData = /api/foods/{category id}/{code}");
 
-      Uri url = Uri.parse('$appLocalBaseUrl/api/foods/recommendation/$code');
-      print("URL called /api/foods/recommendation/{code} = $url");
+      Uri url = Uri.parse('$appLocalBaseUrl/api/foods/${controller.categoryValue}/$code');
+      print("URL = /api/foods/{category id}/{code} = $url");
 
       final response = await http.get(url);
-      print("RESPONSE called /api/foods/recommendation/{code} = $response");
+      print("RESPONSE = /api/foods/{category id}/{code} = $response");
       // print (response.body);
 
       if (response.statusCode == 200) {
