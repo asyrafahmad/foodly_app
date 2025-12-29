@@ -14,6 +14,7 @@ class SearchResults extends StatelessWidget {
   Widget build(BuildContext context) {
 
     final controller = Get.put(SearchFoodController());
+    
     return Container(
       padding: EdgeInsets.fromLTRB(12.w, 12.h, 12.w, 12.h),
       height: height,

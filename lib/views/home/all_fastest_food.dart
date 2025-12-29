@@ -17,7 +17,7 @@ class AllFastestFoodPage extends HookWidget {
   @override
   Widget build(BuildContext context) {
 
-    final hookResult = useFetchAllFoods("41007428","dummy");
+    final hookResult = useFetchAllFoods("fg43gf43r3f4","dummy");
     List<FoodsModel>? foods= hookResult.data;
     final isLoading = hookResult.isLoading;
 
@@ -36,7 +36,7 @@ class AllFastestFoodPage extends HookWidget {
         child: Padding(
           padding: EdgeInsets.all(12.h),
           child: isLoading 
-            ? FoodsListShimmer() 
+            ? const FoodsListShimmer() 
             : ListView(
               children: List.generate(foods!.length, (i) {
                 var food = foods[i];
