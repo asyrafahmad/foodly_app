@@ -21,19 +21,18 @@ class CategoryList extends HookWidget {
     return isLoading 
     // return isLoading || categoriesList == null
         ? const CatergoriesShimmer() 
-        : Container(
+        : SizedBox(
           height: 80.h,
-          padding: EdgeInsets.only(left: 12.w, top: 10.h),
           child:  ListView(
-                scrollDirection: Axis.horizontal,
-                children: List.generate(categoriesList!.length, (i) {
-                // children: List.generate(categoriesList.length, (i) {
-                  CategoriesModel category = categoriesList[i];
+            scrollDirection: Axis.horizontal,
+            children: List.generate(categoriesList!.length, (i) {
+            // children: List.generate(categoriesList.length, (i) {
+              CategoriesModel category = categoriesList[i];
 
-                  return CategoryWidget(category: category);
+              return CategoryWidget(category: category);
 
-                }),
-              ),
+            }),
+          ),
         );
   }
 }

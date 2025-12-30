@@ -18,9 +18,10 @@ class FoodTile extends HookWidget {
   // Stateless list of food items shown horizontally.
   // If you need to react to user interaction or selection state, convert
   // this to a StatefulWidget or use a state-management solution (GetX, Provider, etc.).
-  const FoodTile({super.key, required this.food});
+  const FoodTile({super.key, required this.food, this.color});
 
   final FoodsModel food;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +39,7 @@ class FoodTile extends HookWidget {
             height: 70 .h,
             width: width,
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: color ?? kOffWhite ,
               borderRadius: BorderRadius.circular(12.r),
             ),
             child: Container(
