@@ -16,7 +16,7 @@ class CategoryList extends HookWidget {
     List<CategoriesModel>? categoriesList = hookResult.data;
     // final categories = categoriesList ?? <CategoriesModel>[];
     final isLoading = hookResult.isLoading;
-    final error = hookResult.error;
+    // final error = hookResult.error;
 
     return isLoading 
     // return isLoading || categoriesList == null

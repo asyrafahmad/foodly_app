@@ -19,7 +19,7 @@ class RecommendationsPage extends HookWidget {
     final hookResults = useFetchAllFoods('1', '1');
     List<FoodsModel>? foodsList = hookResults.data;
     final isLoading = hookResults.isLoading;
-    final error = hookResults.error;
+    // final error = hookResults.error;
 
     return Scaffold(
       appBar: AppBar(

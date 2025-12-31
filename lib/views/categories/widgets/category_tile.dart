@@ -10,6 +10,7 @@ import 'package:foodly_app/models/categories.dart';
 import 'package:foodly_app/views/categories/category_page.dart';
 import 'package:get/get.dart';
 
+// ignore: must_be_immutable
 class CategoryTile extends StatelessWidget {
   CategoryTile({
     super.key,

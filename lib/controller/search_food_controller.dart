@@ -67,7 +67,7 @@ class SearchFoodController extends GetxController{
         setLoading = false;
         
         // Parse the error response body and convert it to an ApiError object
-        var error = apiErrorFromJson(response.body);
+        apiErrorFromJson(response.body);
       }
     } catch (e) {
       // If any exception occurs during the request, set loading to false

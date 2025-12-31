@@ -1,19 +1,13 @@
-// Core Flutter material widgets
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-// ScreenUtil for responsive sizing (w, h, r helpers)
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:foodly_app/common/app_style.dart';
 import 'package:foodly_app/common/reusable_text.dart';
-import 'package:foodly_app/common/shimmers/nearby_shimmer.dart';
 import 'package:foodly_app/constants/constants.dart';
-import 'package:foodly_app/hooks/fetch_foods.dart';
 import 'package:foodly_app/models/foods.dart';
 import 'package:foodly_app/views/food/food_page.dart';
-// Reusable FoodWidget that renders a single food card/item
-import 'package:foodly_app/views/home/widgets/food_widget.dart';
 import 'package:get/get.dart';
 
 class FoodTile extends HookWidget {
