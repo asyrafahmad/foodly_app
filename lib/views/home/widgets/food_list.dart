@@ -6,8 +6,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:foodly_app/common/shimmers/nearby_shimmer.dart';
 import 'package:foodly_app/hooks/fetch_foods.dart';
 import 'package:foodly_app/models/foods.dart';
+import 'package:foodly_app/views/food/food_page.dart';
 // Reusable FoodWidget that renders a single food card/item
 import 'package:foodly_app/views/home/widgets/food_widget.dart';
+import 'package:get/get.dart';
 
 class FoodList extends HookWidget {
   // Stateless list of food items shown horizontally.
@@ -54,6 +56,9 @@ class FoodList extends HookWidget {
                 title: food.title,
                 time: food.time,
                 price: food.price,
+                onTap: () {
+                  Get.to(() => FoodPage(food: food));
+                },
               ));
 
             }),

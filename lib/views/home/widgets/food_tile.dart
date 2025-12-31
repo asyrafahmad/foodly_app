@@ -11,8 +11,10 @@ import 'package:foodly_app/common/shimmers/nearby_shimmer.dart';
 import 'package:foodly_app/constants/constants.dart';
 import 'package:foodly_app/hooks/fetch_foods.dart';
 import 'package:foodly_app/models/foods.dart';
+import 'package:foodly_app/views/food/food_page.dart';
 // Reusable FoodWidget that renders a single food card/item
 import 'package:foodly_app/views/home/widgets/food_widget.dart';
+import 'package:get/get.dart';
 
 class FoodTile extends HookWidget {
   // Stateless list of food items shown horizontally.
@@ -30,7 +32,9 @@ class FoodTile extends HookWidget {
     // Container gives a fixed height for the horizontal list and padding
     // so the cards align with other horizontal content on the screen.
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Get.to(() => FoodPage(food: food));
+      },
       child: Stack(
         clipBehavior: Clip.hardEdge,
         children: [
