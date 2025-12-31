@@ -25,8 +25,8 @@ class CategoryTile extends StatelessWidget {
 
     return ListTile(
       onTap: () {
-        controller.updateCategory = ''; // clear selected category id in controller
-        controller.updateTitle = ''; // clear selected title in controller
+        controller.updateCategory = category.id; // clear selected category id in controller
+        controller.updateTitle = category.title; // clear selected title in controller
 
         Get.to(() => const CategoryPage(),
           transition: Transition.fadeIn,

@@ -1,9 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_vector_icons/flutter_vector_icons.dart';
+import 'package:foodly_app/common/custom_button.dart';
 import 'package:foodly_app/constants/constants.dart';
 import 'package:foodly_app/controller/food_controller.dart';
 import 'package:foodly_app/models/foods.dart';
+import 'package:foodly_app/views/restaurant/restaurant_page.dart';
 import 'package:get/get.dart';
 
 class FoodPage extends StatefulWidget {
@@ -32,63 +35,93 @@ class _FoodPageState extends State<FoodPage> {
         physics: const NeverScrollableScrollPhysics(),
         padding: EdgeInsets.zero,
         children: [
-          Stack(
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.only(bottomRight: Radius.circular(20.r)),
-                child: Stack(
-                  children: [
-                    SizedBox(
-                      height: 230.h,
-                      child: PageView.builder(
-                        controller: _pageController,
-                        onPageChanged: (i) {
-                          controller.changePage(i);
-                        },
-                        itemCount: widget.food.imageUrl.length,
-                        itemBuilder: (context, i) {
-                          // print(widget.food.imageUrl.length);
-                          final image = widget.food.imageUrl[i];
+          ClipRRect(
+            borderRadius: BorderRadius.only(bottomRight: Radius.circular(20.r)),
+            child: Stack(
+              children: [
+          
+                // PageView
+                SizedBox(
+                  height: 230.h,
+                  child: PageView.builder(
+                    controller: _pageController,
+                    onPageChanged: (i) {
+                      controller.changePage(i);
+                    },
+                    itemCount: widget.food.imageUrl.length,
+                    itemBuilder: (context, i) {
+                      // print(widget.food.imageUrl.length);
+                      final image = widget.food.imageUrl[i];
+                      return Container(
+                        height: 230.h,
+                        width: width,
+                        color: kLightWhite,
+                        child: CachedNetworkImage(
+                          imageUrl: image,
+                          fit: BoxFit.cover,
+                        ),
+                      );
+                    },
+                  ),
+                ),
+          
+                // Page Indicators
+                Positioned(
+                  bottom: 10,
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 12.0),
+                    child: Obx(
+                      () => Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: List.generate(widget.food.imageUrl.length, (index) {
                           return Container(
-                            height: 230.h,
-                            width: width,
-                            color: kLightWhite,
-                            child: CachedNetworkImage(
-                              imageUrl: image,
-                              fit: BoxFit.cover,
+                            margin: EdgeInsets.all(4.h),
+                            width: 10.w,
+                            height: 10.h,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: controller.currentPage == index ? kSecondary : kGrayLight,
                             ),
                           );
-                        },
-                      ),
-                    ),
-
-                    Positioned(
-                      bottom: 10,
-                      child: Padding(
-                        padding: EdgeInsets.only(left: 12.0),
-                        child: Obx(() => Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: List.generate(widget.food.imageUrl.length, (index) {
-                            return Container(
-                              margin: EdgeInsets.all(4.h),
-                              width: 10.w,
-                              height: 10.h,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: controller.currentPage == index ? kSecondary : kGrayLight,
-                              ),
-                            );
-                          }),
-                        )),
+                        }),
                       )
                     ),
+                  )
+                ),
+          
+                // Back Button
+                Positioned(
+                  top: 40.h,
+                  left: 12.w,
+                  child: GestureDetector(
+                    onTap: () {
+                      Get.back();
+                    },
+                    child: const Icon(
+                      Ionicons.chevron_back_circle,
+                      color: kPrimary,
+                      size: 30,
+                    )
+                  ),
+                ),
+          
+                // Add to Cart Button
+                Positioned(
+                  bottom: 10,
+                  right: 12.w,
+                  child: CustomButton(
+                    btnWidth: 120.w,
+                    text: "Open Restaurant",
+                    onTap: () {
+                      Get.to(() => const RestaurantPage());
+                    },
+                  ),
+                ),
+              ]
+            )
+          ),
 
-
-                  ]
-                )
-              )
-            ],
-          )
+          
         ],
       ),
     );

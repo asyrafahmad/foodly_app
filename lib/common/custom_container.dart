@@ -25,7 +25,6 @@ class CustomContainer extends StatelessWidget {
     // Width uses a shared `width` value imported from constants.
     return SizedBox(
       height: MediaQuery.of(context).size.height * 0.75,
-      width: width,
       child: ClipRRect(
         // ClipRRect applies rounded corners to its child widget.
         borderRadius: BorderRadius.only(
