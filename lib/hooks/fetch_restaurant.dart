@@ -1,13 +1,16 @@
+import 'dart:convert';
+
+import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:foodly_app/constants/constants.dart';
 import 'package:foodly_app/models/apiError.dart';
-import 'package:foodly_app/models/hook_models/hook_result.dart';
+import 'package:foodly_app/models/hook_models/restaurant_hook.dart';
 import 'package:foodly_app/models/restaurant.dart';
 import 'package:http/http.dart' as http;
 
-FetchHook useFetchRestaurant(String code) {
+FetchRestaurantHook useFetchRestaurant(String code) {
 
-  final restaurantItems = useState<List<RestaurantsModel>?>(null);
+  final restaurantItems = useState<RestaurantsModel?>(null);
   final isLoading = useState<bool>(false);
   final error = useState<Exception?>(null);
   final apiError = useState<ApiError?>(null);
@@ -18,7 +21,7 @@ FetchHook useFetchRestaurant(String code) {
     try {
       // print("fetchData called /api/restaurant/$code");
 
-      Uri url = Uri.parse('$appLocalBaseUrl/api/restaurant/$code');
+      Uri url = Uri.parse('$appLocalBaseUrl/api/restaurant//byId/$code');
       // print("URL = $url");
 
       final response = await http.get(url);
@@ -26,9 +29,8 @@ FetchHook useFetchRestaurant(String code) {
       // print (response);
 
       if (response.statusCode == 200) {
-
-        final List<RestaurantsModel> restaurants = restaurantModelFromJson(response.body);
-        restaurantItems.value = restaurants;
+        var restaurant = jsonDecode(response.body);
+        restaurantItems.value = RestaurantsModel.fromJson(restaurant);
 
       } else {
 
@@ -43,7 +45,7 @@ FetchHook useFetchRestaurant(String code) {
       }
 
     } catch (e) {
-      error.value = Exception('Failed to fetch categories: $e');
+      debugPrint(e.toString());
     } finally {
       isLoading.value = false;
     }
@@ -59,7 +61,7 @@ FetchHook useFetchRestaurant(String code) {
     fetchData();
   }
 
-  return FetchHook(
+  return FetchRestaurantHook(
     data: restaurantItems.value,
     isLoading: isLoading.value,
     error: error.value?.toString(),
