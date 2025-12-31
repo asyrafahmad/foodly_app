@@ -6,7 +6,6 @@ import 'package:foodly_app/common/background_container.dart';
 import 'package:foodly_app/common/reusable_text.dart';
 import 'package:foodly_app/common/shimmers/foodlist_shimmer.dart';
 import 'package:foodly_app/constants/constants.dart';
-import 'package:foodly_app/constants/uidata.dart';
 import 'package:foodly_app/hooks/fetch_all_restaurants.dart';
 import 'package:foodly_app/models/restaurant.dart';
 import 'package:foodly_app/views/home/widgets/restaurant_tile.dart';
