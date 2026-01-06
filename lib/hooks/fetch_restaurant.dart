@@ -21,7 +21,7 @@ FetchRestaurantHook useFetchRestaurant(String code) {
     try {
       // print("fetchData called /api/restaurant/$code");
 
-      Uri url = Uri.parse('$appLocalBaseUrl/api/restaurant//byId/$code');
+      Uri url = Uri.parse('$appLocalBaseUrl/api/restaurant/byId/$code');
       // print("URL = $url");
 
       final response = await http.get(url);

@@ -1,15 +1,17 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:foodly_app/common/custom_button.dart';
 import 'package:foodly_app/constants/constants.dart';
 import 'package:foodly_app/controller/food_controller.dart';
+import 'package:foodly_app/hooks/fetch_restaurant.dart';
 import 'package:foodly_app/models/foods.dart';
 import 'package:foodly_app/views/restaurant/restaurant_page.dart';
 import 'package:get/get.dart';
 
-class FoodPage extends StatefulWidget {
+class FoodPage extends StatefulHookWidget {
   const FoodPage({super.key, required this.food});
   
   final FoodsModel food;
@@ -28,6 +30,7 @@ class _FoodPageState extends State<FoodPage> {
     // print(widget.food.description);
     // print(widget.food.imageUrl);
 
+    final hookResult = useFetchRestaurant(widget.food.restaurant);
     final controller = Get.put(FoodController());
 
     return Scaffold(
@@ -113,7 +116,7 @@ class _FoodPageState extends State<FoodPage> {
                     btnWidth: 120.w,
                     text: "Open Restaurant",
                     onTap: () {
-                      Get.to(() => const RestaurantPage());
+                      Get.to(() => RestaurantPage(restaurant: hookResult.data));
                     },
                   ),
                 ),

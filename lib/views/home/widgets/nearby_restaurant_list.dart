@@ -5,6 +5,8 @@ import 'package:foodly_app/common/shimmers/nearby_shimmer.dart';
 import 'package:foodly_app/hooks/fetch_restaurants.dart';
 import 'package:foodly_app/models/restaurant.dart';
 import 'package:foodly_app/views/home/widgets/restaurant_widget.dart';
+import 'package:foodly_app/views/restaurant/restaurant_page.dart';
+import 'package:get/get.dart';
 
 class NearbyRestaurantsList extends HookWidget {
   const NearbyRestaurantsList({super.key});
@@ -33,6 +35,9 @@ class NearbyRestaurantsList extends HookWidget {
               title: restaurant.title, 
               time: restaurant.time, 
               rating: "324324",
+              onTap: () {
+                Get.to(() => RestaurantPage(restaurant: restaurant));
+              },
             );
           }),
         ),

@@ -12,6 +12,7 @@ import 'package:foodly_app/common/shimmers/foodlist_shimmer.dart';
 // App-wide constants like colors and dimensions
 import 'package:foodly_app/constants/constants.dart';
 // UI data including category information
+import 'package:foodly_app/constants/uidata.dart';
 import 'package:foodly_app/hooks/fetch_all_categories.dart';
 import 'package:foodly_app/models/categories.dart';
 import 'package:foodly_app/views/categories/widgets/category_tile.dart';
