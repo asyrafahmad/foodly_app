@@ -138,7 +138,10 @@ class _FoodPageState extends State<FoodPage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       ReusableText(text: widget.food.title, style: appStyle(18, kDark, FontWeight.w600)),
-                      ReusableText(text: "RM ${widget.food.price.toStringAsFixed(2)}", style: appStyle(18, kPrimary, FontWeight.w600)),
+                      Obx(() => ReusableText(
+                        text: "RM ${widget.food.price * controller.count.value}", 
+                        style: appStyle(18, kPrimary, FontWeight.w600)
+                      )),
                     ],
                   ),
 
@@ -231,9 +234,9 @@ class _FoodPageState extends State<FoodPage> {
                       ReusableText(
                         text: "Quantity",
                         style: appStyle(
-                          11, 
+                          18, 
                           kDark, 
-                          FontWeight.w400
+                          FontWeight.bold
                         )
                       ),
                       SizedBox(
@@ -243,7 +246,7 @@ class _FoodPageState extends State<FoodPage> {
                         children: [
                           GestureDetector(
                             onTap: () {
-                              
+                              controller.increment();
                             },
                             child: const Icon(
                               AntDesign.pluscircleo,
@@ -254,15 +257,15 @@ class _FoodPageState extends State<FoodPage> {
 
                           Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                            child: ReusableText(
-                              text: "0", 
+                            child: Obx(() => ReusableText(
+                              text: "${controller.count.value}", 
                               style: appStyle(14, kDark, FontWeight.w600)
-                            ),
+                            )),
                           ),
 
                           GestureDetector(
                             onTap: () {
-                              
+                              controller.decrement();
                             },
                             child: const Icon(
                               AntDesign.minuscircleo,
@@ -274,6 +277,9 @@ class _FoodPageState extends State<FoodPage> {
                       )
                     ],
                   ),
+
+                  SizedBox(height: 20.h),
+                  ReusableText(text: "Preferences", style: style)
                 ],
               ),
             )
