@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:foodly_app/common/app_style.dart';
 import 'package:foodly_app/common/custom_button.dart';
+import 'package:foodly_app/common/custom_text_field.dart';
 import 'package:foodly_app/common/reusable_text.dart';
 import 'package:foodly_app/constants/constants.dart';
 import 'package:foodly_app/controller/food_controller.dart';
@@ -24,6 +25,7 @@ class FoodPage extends StatefulHookWidget {
 
 class _FoodPageState extends State<FoodPage> {
 
+  final TextEditingController _preferencesController = TextEditingController();
   final PageController _pageController = PageController();
 
   @override
@@ -38,7 +40,6 @@ class _FoodPageState extends State<FoodPage> {
 
     return Scaffold(
       body: ListView(
-        physics: const NeverScrollableScrollPhysics(),
         padding: EdgeInsets.zero,
         children: [
           ClipRRect(
@@ -129,159 +130,167 @@ class _FoodPageState extends State<FoodPage> {
 
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 12.w),
-            child: SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(height: 10),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      ReusableText(text: widget.food.title, style: appStyle(18, kDark, FontWeight.w600)),
-                      Obx(() => ReusableText(
-                        text: "RM ${widget.food.price * controller.count.value}", 
-                        style: appStyle(18, kPrimary, FontWeight.w600)
-                      )),
-                    ],
-                  ),
-
-                  SizedBox(height: 5.h),
-                  Text(
-                    widget.food.description, 
-                    textAlign: TextAlign.justify,
-                    style: appStyle(14, kGray, FontWeight.w400)
-                  ),
-
-                  SizedBox(height: 5.h),
-                  SizedBox(
-                    height: 18.h,
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: List.generate(widget.food.foodTags.length, (i) {
-
-                        final tag = widget.food.foodTags[i];
-
-                        return Container(
-                          height: 15.h,
-                          width: 50.w,
-                          margin: EdgeInsets.only(right: 5.w),
-                          decoration: BoxDecoration(
-                            color: kPrimary,
-                            borderRadius: BorderRadius.all(Radius.circular(15.r)),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(height: 10),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    ReusableText(text: widget.food.title, style: appStyle(18, kDark, FontWeight.w600)),
+                    Obx(() => ReusableText(
+                      text: "RM ${widget.food.price * controller.count.value}", 
+                      style: appStyle(18, kPrimary, FontWeight.w600)
+                    )),
+                  ],
+                ),
+            
+                SizedBox(height: 5.h),
+                Text(
+                  widget.food.description, 
+                  textAlign: TextAlign.justify,
+                  style: appStyle(14, kGray, FontWeight.w400)
+                ),
+            
+                SizedBox(height: 5.h),
+                SizedBox(
+                  height: 18.h,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: List.generate(widget.food.foodTags.length, (i) {
+            
+                      final tag = widget.food.foodTags[i];
+            
+                      return Container(
+                        height: 15.h,
+                        width: 50.w,
+                        margin: EdgeInsets.only(right: 5.w),
+                        decoration: BoxDecoration(
+                          color: kPrimary,
+                          borderRadius: BorderRadius.all(Radius.circular(15.r)),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 6.w),
+                          child: ReusableText(
+                            text: tag, 
+                            style: appStyle(11, kWhite, FontWeight.w400)
                           ),
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 6.w),
-                            child: ReusableText(
-                              text: tag, 
-                              style: appStyle(11, kWhite, FontWeight.w400)
-                            ),
-                          ),
-                        );
-                      }),
-                    ),
-                  ),
-
-                  SizedBox(height: 15.h),
-                  ReusableText(text: "Additives and Toppings", style: appStyle(18, kDark, FontWeight.w600)),
-                  
-                  SizedBox(height: 10.h),
-                  Column(
-                    children: List.generate(widget.food.additives.length, (i) {
-                      final additive = widget.food.additives[i];
-
-                      return CheckboxListTile(
-                        contentPadding: EdgeInsets.zero,
-                        visualDensity: VisualDensity.compact,
-                        dense: true,
-                        activeColor: kSecondary,
-                        value: false,
-                        tristate: false,
-                        onChanged: (bool? value) {
-                          
-                        },
-                        title: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            ReusableText(
-                              text: additive.title,
-                              style: appStyle(
-                                11, 
-                                kDark, 
-                                FontWeight.w400
-                              )
-                            ),
-                            SizedBox(
-                              width: 5.w,
-                            ),
-                            ReusableText(
-                              text: "RM ${additive.price}",
-                              style: appStyle(
-                                11, 
-                                kPrimary, 
-                                FontWeight.w600
-                              )
-                            ),
-                          ],
                         ),
                       );
-                    })
+                    }),
                   ),
-                  
-                  SizedBox(height: 20.h),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      ReusableText(
-                        text: "Quantity",
-                        style: appStyle(
-                          18, 
-                          kDark, 
-                          FontWeight.bold
-                        )
-                      ),
-                      SizedBox(
-                        width: 5.w,
-                      ),
-                      Row(
+                ),
+            
+                SizedBox(height: 15.h),
+                ReusableText(text: "Additives and Toppings", style: appStyle(18, kDark, FontWeight.w600)),
+                
+                SizedBox(height: 10.h),
+                Column(
+                  children: List.generate(widget.food.additives.length, (i) {
+                    final additive = widget.food.additives[i];
+            
+                    return CheckboxListTile(
+                      contentPadding: EdgeInsets.zero,
+                      visualDensity: VisualDensity.compact,
+                      dense: true,
+                      activeColor: kSecondary,
+                      value: false,
+                      tristate: false,
+                      onChanged: (bool? value) {
+                        
+                      },
+                      title: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          GestureDetector(
-                            onTap: () {
-                              controller.increment();
-                            },
-                            child: const Icon(
-                              AntDesign.pluscircleo,
-                              color: kPrimary,
-                              size: 20,
-                            ),
+                          ReusableText(
+                            text: additive.title,
+                            style: appStyle(
+                              11, 
+                              kDark, 
+                              FontWeight.w400
+                            )
                           ),
-
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                            child: Obx(() => ReusableText(
-                              text: "${controller.count.value}", 
-                              style: appStyle(14, kDark, FontWeight.w600)
-                            )),
+                          SizedBox(
+                            width: 5.w,
                           ),
-
-                          GestureDetector(
-                            onTap: () {
-                              controller.decrement();
-                            },
-                            child: const Icon(
-                              AntDesign.minuscircleo,
-                              color: kPrimary,
-                              size: 20,
-                            ),
+                          ReusableText(
+                            text: "RM ${additive.price}",
+                            style: appStyle(
+                              11, 
+                              kPrimary, 
+                              FontWeight.w600
+                            )
                           ),
                         ],
+                      ),
+                    );
+                  })
+                ),
+                
+                SizedBox(height: 20.h),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    ReusableText(
+                      text: "Quantity",
+                      style: appStyle(
+                        18, 
+                        kDark, 
+                        FontWeight.bold
                       )
-                    ],
-                  ),
-
-                  SizedBox(height: 20.h),
-                  ReusableText(text: "Preferences", style: style)
-                ],
-              ),
+                    ),
+                    SizedBox(
+                      width: 5.w,
+                    ),
+                    Row(
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            controller.increment();
+                          },
+                          child: const Icon(
+                            AntDesign.pluscircleo,
+                            color: kPrimary,
+                            size: 20,
+                          ),
+                        ),
+            
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                          child: Obx(() => ReusableText(
+                            text: "${controller.count.value}", 
+                            style: appStyle(14, kDark, FontWeight.w600)
+                          )),
+                        ),
+            
+                        GestureDetector(
+                          onTap: () {
+                            controller.decrement();
+                          },
+                          child: const Icon(
+                            AntDesign.minuscircleo,
+                            color: kPrimary,
+                            size: 20,
+                          ),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+            
+                SizedBox(height: 20.h),
+                ReusableText(text: "Preferences", style: appStyle(18, kDark, FontWeight.bold)),
+            
+                SizedBox(height: 5.h),
+                SizedBox(
+                  height: 65.h,
+                  child: CustomTextWidget(
+                    controller: _preferencesController,
+                    hintText: "Add a note with your preferences",
+                    maxLines: 3,
+                  )
+                )
+              ],
             )
           )
           
