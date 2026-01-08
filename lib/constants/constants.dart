@@ -23,3 +23,10 @@ double width = 375.w;
 const String appBaseUrl = "http://localhost:6013";
 const String appLocalBaseUrl = "http://10.89.179.50:6013";  // local PC ipv4
 
+final List<String> verificationReasons = [
+  'Real-time Updates: Get Instant notifications about your order status',
+  'Direct Communication: A verified number ensures seamless communication.',
+  'Enhanced Security: Protect your account and confirm orders securely.',
+  'Effortless Rescheduling: Easily addresss issues with a quick call.',
+  'Exclusive Offers: Stay in the loop for special deals and promotions'
+];

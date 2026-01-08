@@ -11,6 +11,7 @@ import 'package:foodly_app/constants/constants.dart';
 import 'package:foodly_app/controller/food_controller.dart';
 import 'package:foodly_app/hooks/fetch_restaurant.dart';
 import 'package:foodly_app/models/foods.dart';
+import 'package:foodly_app/views/auth/phone_verification.dart';
 import 'package:foodly_app/views/restaurant/restaurant_page.dart';
 import 'package:get/get.dart';
 
@@ -289,6 +290,51 @@ class _FoodPageState extends State<FoodPage> {
                     hintText: "Add a note with your preferences",
                     maxLines: 3,
                   )
+                ),
+
+                SizedBox(
+                  height: 15.h,
+                ),
+                Container(
+                  height: 40.h,
+                  decoration: BoxDecoration(
+                    color: kLightWhite,
+                    borderRadius: BorderRadius.circular(30.r),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      
+                      GestureDetector(
+                        onTap: () {
+                          _showVerificationSheet(context);
+                        },
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 12.w),
+                          child: ReusableText(
+                            text: "Place Order", 
+                            style: appStyle(18, kLightWhite, FontWeight.w600)
+                          ),
+                        ),
+                      ),
+
+                      GestureDetector(
+                        onTap: () {
+                          
+                        },
+                        child: CircleAvatar(
+                          backgroundColor: kSecondary,
+                          radius: 20.r,
+                          child: const Icon(
+                            Ionicons.cart,
+                            color: kLightWhite,
+                            size: 20,
+                          ),
+                        ),
+                      ),
+                      
+                    ],
+                  )
                 )
               ],
             )
@@ -296,6 +342,80 @@ class _FoodPageState extends State<FoodPage> {
           
         ],
       ),
+    );
+  }
+
+  Future<dynamic> _showVerificationSheet(BuildContext context) {
+    return  showModalBottomSheet(
+      context: context,
+      backgroundColor: Colors.transparent,
+      showDragHandle: true,
+      builder: (context) {
+        return Container(
+          height: 500.h,
+          width: width,
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/images/restaurant_bk.png"),
+              fit: BoxFit.fill
+            ),
+            color: kLightWhite,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(12),
+              topRight: Radius.circular(12),
+            ) 
+          ),
+          child: Padding(
+            padding: EdgeInsets.all(8.h),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                SizedBox(
+                  height: 10.h
+                ),
+
+                ReusableText(
+                  text: "Verify Your Number", 
+                  style: appStyle(18, kPrimary, FontWeight.w600)
+                ),
+
+                SizedBox(
+                  height: 250.h,
+                  child: Column(
+                    children: List.generate(verificationReasons.length, (index) {
+                      return ListTile(
+                        leading: Icon(
+                          Icons.check_circle_outline, 
+                          color: kPrimary
+                        ),
+                        title: Text(
+                          verificationReasons[index], 
+                          textAlign: TextAlign.justify,
+                          style: appStyle(11, kGrayLight, FontWeight.normal)
+                        )
+                      );
+                    })
+                  )
+                ),
+
+                SizedBox(
+                  height: 10.h
+                ),
+
+                CustomButton(
+                  text: "Verify Phone Number",
+                  btnHeight: 35.h,
+                  onTap: () {
+                    Get.to(() => const PhoneVerificationPage());
+                  },
+                ),
+
+                
+              ],
+            ),
+          ),
+        );
+      }
     );
   }
 }
