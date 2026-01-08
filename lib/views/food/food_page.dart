@@ -37,6 +37,7 @@ class _FoodPageState extends State<FoodPage> {
 
     final hookResult = useFetchRestaurant(widget.food.restaurant);
     final controller = Get.put(FoodController());
+    controller.loadAdditives(widget.food.additives);
     print(widget.food.foodTags);
 
     return Scaffold(
@@ -140,7 +141,7 @@ class _FoodPageState extends State<FoodPage> {
                   children: [
                     ReusableText(text: widget.food.title, style: appStyle(18, kDark, FontWeight.w600)),
                     Obx(() => ReusableText(
-                      text: "RM ${widget.food.price * controller.count.value}", 
+                      text: "RM ${((widget.food.price + controller.additivePrice) * controller.count.value)}", 
                       style: appStyle(18, kPrimary, FontWeight.w600)
                     )),
                   ],
@@ -186,19 +187,20 @@ class _FoodPageState extends State<FoodPage> {
                 ReusableText(text: "Additives and Toppings", style: appStyle(18, kDark, FontWeight.w600)),
                 
                 SizedBox(height: 10.h),
-                Column(
-                  children: List.generate(widget.food.additives.length, (i) {
-                    final additive = widget.food.additives[i];
+                Obx(() => Column(
+                  children: List.generate(controller.additivesList.length, (i) {
+                    final additive = controller.additivesList[i];
             
                     return CheckboxListTile(
                       contentPadding: EdgeInsets.zero,
                       visualDensity: VisualDensity.compact,
                       dense: true,
                       activeColor: kSecondary,
-                      value: false,
+                      value: additive.isChecked.value,
                       tristate: false,
                       onChanged: (bool? value) {
-                        
+                        additive.toggleChecked();
+                        controller.getTotalPrice();
                       },
                       title: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -226,7 +228,7 @@ class _FoodPageState extends State<FoodPage> {
                       ),
                     );
                   })
-                ),
+                ),),
                 
                 SizedBox(height: 20.h),
                 Row(

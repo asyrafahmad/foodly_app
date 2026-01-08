@@ -27,3 +27,6 @@ flutter build apk
 To create flutter model from JSON result
 1. use quicktype.io in browser
 2. copy and paste the return json result
+
+To use phone otp verification
+1. pub.dev - https://pub.dev/packages/phone_otp_verification
